@@ -127,6 +127,10 @@ public class Main {
                 if((buf[31]&0xff)>=192) {
                     index_resource_record += 2;
                 }
+                else
+                {
+                    index_resource_record += name.length()+1;
+                }
 
 
                 //record type - 2 octeti
