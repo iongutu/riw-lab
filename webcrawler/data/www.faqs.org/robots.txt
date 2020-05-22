@@ -1,0 +1,40 @@
+HTTP/1.1 200 OK
+Date: Fri, 22 May 2020 12:35:26 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Last-Modified: Tue, 22 Oct 2013 11:14:49 GMT
+ETag: "19c-4e95282451c40"
+Accept-Ranges: bytes
+Content-Length: 412
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/plain
+
+User-agent: *
+Disallow: terms.html
+Disallow: /abstracts/mtc.class.php
+Disallow: /knowledge
+Disallow: /dictionary/js/function-wiki.js
+
+User-agent: sitebot
+Disallow: /
+
+User-agent: businessdbbot
+Disallow: /
+
+User-agent: magpie-crawle
+Disallow: /
+
+User-agent: Bender
+Disallow: /
+
+User-agent: JikeSpider
+Disallow: /
+
+User-agent: msnbot
+Disallow: /patents/imgfull/
+
+User-agent: Mediapartners-Google
+Allow: /knowledge

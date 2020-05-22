@@ -1,0 +1,77 @@
+<html>
+ <head></head>
+ <body>
+  HTTP/1.1 200 OK Server: nginx/1.10.2 Date: Fri, 22 May 2020 12:34:44 GMT Content-Type: text/html Content-Length: 5005 Last-Modified: Wed, 03 May 2017 07:23:45 GMT Connection: close ETag: "59098581-138d" Accept-Ranges: bytes    
+  <link rel="STYLESHEET" href="modpython.css" type="text/css"> 
+  <link rel="first" href="modpython.html" title="Mod_python Manual"> 
+  <link rel="contents" href="contents.html" title="Contents"> 
+  <link rel="index" href="genindex.html" title="Index"> 
+  <link rel="last" href="about.html" title="About this document..."> 
+  <link rel="help" href="about.html" title="About this document..."> 
+  <link REL="prev" href="dir-conn.html"> 
+  <link REL="parent" href="directives.html"> 
+  <link REL="next" href="dir-other-epd.html"> 
+  <meta name="aesop" content="information"> 
+  <meta NAME="description" CONTENT="Other Directives"> 
+  <meta NAME="keywords" CONTENT="modpython"> 
+  <meta NAME="resource-type" CONTENT="document"> 
+  <meta NAME="distribution" CONTENT="global"> 
+  <title>5.4 Other Directives</title>   
+  <div class="navigation"> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="5.3.1 PythonConnectionHandler" href="dir-conn-ch.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="5. Apache Configuration Directives" href="directives.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="5.4.1 PythonEnablePdb" href="dir-other-epd.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="dir-conn-ch.html">5.3.1 PythonConnectionHandler</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="directives.html">5. Apache Configuration Directives</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="dir-other-epd.html">5.4.1 PythonEnablePdb</a> 
+   <br>
+   <hr> 
+  </div> 
+  <!--End of Navigation Panel--> 
+  <h1><a name="SECTION007400000000000000000">&nbsp;</a> <br> 5.4 Other Directives </h1> 
+  <p> </p>
+  <p></p>
+  <hr> 
+  <!--Table of Child-Links--> <a name="CHILD_LINKS"><strong>Subsections</strong></a> 
+  <ul class="ChildLinks"> 
+   <li><a href="dir-other-epd.html">5.4.1 PythonEnablePdb</a> </li>
+   <li><a href="dir-other-pd.html">5.4.2 PythonDebug</a> </li>
+   <li><a href="dir-other-pimp.html">5.4.3 PythonImport</a> </li>
+   <li><a href="dir-other-ipd.html">5.4.4 PythonInterpPerDirectory</a> </li>
+   <li><a href="dir-other-ipdv.html">5.4.5 PythonInterpPerDirective</a> </li>
+   <li><a href="dir-other-pi.html">5.4.6 PythonInterpreter</a> </li>
+   <li><a href="dir-other-phm.html">5.4.7 PythonHandlerModule</a> </li>
+   <li><a href="dir-other-par.html">5.4.8 PythonAutoReload</a> </li>
+   <li><a href="dir-other-pomz.html">5.4.9 PythonOptimize</a> </li>
+   <li><a href="dir-other-po.html">5.4.10 PythonOption</a> </li>
+   <li><a href="dir-other-pp.html">5.4.11 PythonPath</a> </li>
+  </ul> 
+  <!--End of Table of Child-Links--> 
+  <div class="navigation"> 
+   <p></p>
+   <hr> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="5.3.1 PythonConnectionHandler" href="dir-conn-ch.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="5. Apache Configuration Directives" href="directives.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="5.4.1 PythonEnablePdb" href="dir-other-epd.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="dir-conn-ch.html">5.3.1 PythonConnectionHandler</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="directives.html">5. Apache Configuration Directives</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="dir-other-epd.html">5.4.1 PythonEnablePdb</a> 
+   <hr> <span class="release-info">Release 3.2.8, documentation updated on February 19, 2006.</span> 
+  </div> 
+  <!--End of Navigation Panel-->   
+ </body>
+</html>

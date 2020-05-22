@@ -1,0 +1,96 @@
+<html>
+ <head></head>
+ <body>
+  HTTP/1.1 200 OK Server: nginx/1.10.2 Date: Fri, 22 May 2020 12:39:03 GMT Content-Type: text/html Content-Length: 5498 Last-Modified: Wed, 03 May 2017 07:23:45 GMT Connection: close ETag: "59098581-157a" Accept-Ranges: bytes    
+  <link rel="STYLESHEET" href="modpython.css" type="text/css"> 
+  <link rel="first" href="modpython.html" title="Mod_python Manual"> 
+  <link rel="contents" href="contents.html" title="Contents"> 
+  <link rel="index" href="genindex.html" title="Index"> 
+  <link rel="last" href="about.html" title="About this document..."> 
+  <link rel="help" href="about.html" title="About this document..."> 
+  <link REL="next" href="contents.html"> 
+  <link REL="prev" HREF="modpython.html"> 
+  <link REL="parent" HREF="modpython.html"> 
+  <link REL="next" href="contents.html"> 
+  <meta name="aesop" content="information"> 
+  <meta NAME="description" CONTENT="Front Matter"> 
+  <meta NAME="keywords" CONTENT="modpython"> 
+  <meta NAME="resource-type" CONTENT="document"> 
+  <meta NAME="distribution" CONTENT="global"> 
+  <title>Front Matter</title>   
+  <div class="navigation"> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="Mod_python Manual" href="modpython.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="Mod_python Manual" href="modpython.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="Contents" href="contents.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="modpython.html">Mod_python Manual</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="modpython.html">Mod_python Manual</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="contents.html">Contents</a> 
+   <br>
+   <hr> 
+  </div> 
+  <!--End of Navigation Panel--> 
+  <h1><a name="SECTION001000000000000000000">&nbsp;</a> <br> Front Matter </h1> 
+  <p> </p>
+  <div class="centerline" id="par5532" align="CENTER"> <b>Copyright © 2004 Apache Software Foundation.</b>
+  </div> 
+  <p> Licensed under the Apache License, Version 2.0 (the ``License''); you may not use this file except in compliance with the License. You may obtain a copy of the License at </p>
+  <p> http://www.apache.org/licenses/LICENSE-2.0 </p>
+  <p> Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an ``AS IS'' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+  <p> </p>
+  <p> </p>
+  <h3>Abstract:</h3> 
+  <div class="ABSTRACT"> 
+   <p> Mod_python allows embedding Python within the Apache server for a considerable boost in performance and added flexibility in designing web based applications. </p>
+   <p> This document aims to be the only necessary and authoritative source of information about mod_python, usable as a comprehensive reference, a user guide and a tutorial all-in-one. </p>
+   <p> </p>
+   <div class="seealso"> 
+    <p class="heading"><b>See Also:</b></p> 
+    <dl compact class="seetitle"> 
+     <dt>
+      <em class="citetitle"><a href="http://www.python.org/">Python Language Web Site</a></em> 
+     </dt>
+     <dd>
+      for information on the Python language 
+     </dd>
+    </dl> 
+    <dl compact class="seetitle"> 
+     <dt>
+      <em class="citetitle"><a href="http://httpd.apache.org/">Apache Server Web Site</a></em> 
+     </dt>
+     <dd>
+      for information on the Apache server 
+     </dd>
+    </dl> 
+   </div> 
+   <p> </p>
+  </div> 
+  <p> </p>
+  <p> </p>
+  <div class="navigation"> 
+   <p></p>
+   <hr> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="Mod_python Manual" href="modpython.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="Mod_python Manual" href="modpython.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="Contents" href="contents.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="modpython.html">Mod_python Manual</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="modpython.html">Mod_python Manual</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="contents.html">Contents</a> 
+   <hr> <span class="release-info">Release 3.2.8, documentation updated on February 19, 2006.</span> 
+  </div> 
+  <!--End of Navigation Panel-->   
+ </body>
+</html>

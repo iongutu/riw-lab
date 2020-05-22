@@ -1,0 +1,103 @@
+<html>
+ <head></head>
+ <body>
+  HTTP/1.1 200 OK Server: nginx/1.10.2 Date: Fri, 22 May 2020 12:34:45 GMT Content-Type: text/html Content-Length: 6711 Last-Modified: Wed, 03 May 2017 07:23:45 GMT Connection: close ETag: "59098581-1a37" Accept-Ranges: bytes    
+  <link rel="STYLESHEET" href="modpython.css" type="text/css"> 
+  <link rel="first" href="modpython.html" title="Mod_python Manual"> 
+  <link rel="contents" href="contents.html" title="Contents"> 
+  <link rel="index" href="genindex.html" title="Index"> 
+  <link rel="last" href="about.html" title="About this document..."> 
+  <link rel="help" href="about.html" title="About this document..."> 
+  <link REL="next" href="hand-pub-alg-args.html"> 
+  <link REL="prev" href="hand-pub-alg.html"> 
+  <link REL="parent" href="hand-pub-alg.html"> 
+  <link REL="next" href="hand-pub-alg-args.html"> 
+  <meta name="aesop" content="information"> 
+  <meta NAME="description" CONTENT="Traversal"> 
+  <meta NAME="keywords" CONTENT="modpython"> 
+  <meta NAME="resource-type" CONTENT="document"> 
+  <meta NAME="distribution" CONTENT="global"> 
+  <title>6.1.2.1 Traversal</title>   
+  <div class="navigation"> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="6.1.2 The Publishing Algorithm" href="hand-pub-alg.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="6.1.2 The Publishing Algorithm" href="hand-pub-alg.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="6.1.2.2 Argument Matching and" href="hand-pub-alg-args.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="hand-pub-alg.html">6.1.2 The Publishing Algorithm</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="hand-pub-alg.html">6.1.2 The Publishing Algorithm</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="hand-pub-alg-args.html">6.1.2.2 Argument Matching and</a> 
+   <br>
+   <hr> 
+  </div> 
+  <!--End of Navigation Panel--> 
+  <h3><a name="SECTION008121000000000000000">&nbsp;</a> <br> 6.1.2.1 Traversal </h3> 
+  <p> The Publisher handler locates and imports the module specified in the URI. The module location is determined from the <tt class="class">req.filename</tt> attribute. Before importing, the file extension, if any, is discarded. </p>
+  <p> If <tt class="class">req.filename</tt> is empty, the module name defaults to "<tt class="samp">index</tt>". </p>
+  <p> Once module is imported, the remaining part of the URI up to the beginning of any query data (a.k.a. PATH_INFO) is used to find an object within the module. The Publisher handler <i class="dfn">traverses</i> the path, one element at a time from left to right, mapping the elements to Python object within the module. </p>
+  <p> If no path_info was given in the URL, the Publisher handler will use the default value of "<tt class="samp">index</tt>". If the last element is an object inside a module, and the one immediately preceding it is a directory (i.e. no module name is given), then the module name will also default to "<tt class="samp">index</tt>". </p>
+  <p> The traversal will stop and <tt class="constant">HTTP_NOT_FOUND</tt> will be returned to the client if: </p>
+  <p> </p>
+  <ul> 
+   <li>Any of the traversed object's names begin with an underscore ("<tt class="samp">_</tt>"). Use underscores to protect objects that should not be accessible from the web. <p> </p></li> 
+   <li>A module is encountered. Published objects cannot be modules for security reasons. <p> </p></li> 
+  </ul> 
+  <p> If an object in the path could not be found, <tt class="constant">HTTP_NOT_FOUND</tt> is returned to the client. </p>
+  <p> For example, given the following configuration: </p>
+  <p> </p>
+  <div class="verbatim">
+   <pre>
+  DocumentRoot /some/dir
+
+  &lt;Directory /some/dir&gt;
+  SetHandler mod_python
+  PythonHandler mod_python.publisher
+  &lt;/Directory&gt;
+</pre>
+  </div> 
+  <p> And the following <span class="file">/some/dir/index.py</span> file: </p>
+  <p> </p>
+  <div class="verbatim">
+   <pre>
+  def index(req):
+
+  return "We are in index()"
+
+  def hello(req):
+
+  return "We are in hello()"
+</pre>
+  </div> 
+  <p> Then: </p>
+  <p> http://www.somehost/index/index will return "<tt class="samp">We are in index()</tt>" </p>
+  <p> http://www.somehost/index/ will return "<tt class="samp">We are in index()</tt>" </p>
+  <p> http://www.somehost/index/hello will return "<tt class="samp">We are in hello()</tt>" </p>
+  <p> http://www.somehost/hello will return "<tt class="samp">We are in hello()</tt>" </p>
+  <p> http://www.somehost/spam will return "<tt class="samp">404 Not Found</tt>" </p>
+  <p> </p>
+  <div class="navigation"> 
+   <p></p>
+   <hr> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="6.1.2 The Publishing Algorithm" href="hand-pub-alg.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="6.1.2 The Publishing Algorithm" href="hand-pub-alg.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="6.1.2.2 Argument Matching and" href="hand-pub-alg-args.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="hand-pub-alg.html">6.1.2 The Publishing Algorithm</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="hand-pub-alg.html">6.1.2 The Publishing Algorithm</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="hand-pub-alg-args.html">6.1.2.2 Argument Matching and</a> 
+   <hr> <span class="release-info">Release 3.2.8, documentation updated on February 19, 2006.</span> 
+  </div> 
+  <!--End of Navigation Panel-->   
+ </body>
+</html>

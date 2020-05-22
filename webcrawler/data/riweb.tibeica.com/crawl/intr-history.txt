@@ -1,0 +1,98 @@
+<html>
+ <head></head>
+ <body>
+  HTTP/1.1 200 OK Server: nginx/1.10.2 Date: Fri, 22 May 2020 12:39:00 GMT Content-Type: text/html Content-Length: 6810 Last-Modified: Wed, 03 May 2017 07:23:45 GMT Connection: close ETag: "59098581-1a9a" Accept-Ranges: bytes    
+  <link rel="STYLESHEET" href="modpython.css" type="text/css"> 
+  <link rel="first" href="modpython.html" title="Mod_python Manual"> 
+  <link rel="contents" href="contents.html" title="Contents"> 
+  <link rel="index" href="genindex.html" title="Index"> 
+  <link rel="last" href="about.html" title="About this document..."> 
+  <link rel="help" href="about.html" title="About this document..."> 
+  <link REL="prev" href="intr-flexibility.html"> 
+  <link REL="parent" href="introduction.html"> 
+  <link REL="next" href="installation.html"> 
+  <meta name="aesop" content="information"> 
+  <meta NAME="description" CONTENT="History"> 
+  <meta NAME="keywords" CONTENT="modpython"> 
+  <meta NAME="resource-type" CONTENT="document"> 
+  <meta NAME="distribution" CONTENT="global"> 
+  <title>1.3 History</title>   
+  <div class="navigation"> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="1.2 Flexibility" href="intr-flexibility.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="1. Introduction" href="introduction.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="2. Installation" href="installation.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="intr-flexibility.html">1.2 Flexibility</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="introduction.html">1. Introduction</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="installation.html">2. Installation</a> 
+   <br>
+   <hr> 
+  </div> 
+  <!--End of Navigation Panel--> 
+  <h1><a name="SECTION003300000000000000000">&nbsp;</a> <br> 1.3 History </h1> 
+  <p> Mod_python originates from a project called <em class="citetitle"><a href="http://www.ispol.com/home/grisha/httpdapy/" title="Httpdapy">Httpdapy</a></em> (1997). For a long time Httpdapy was not called mod_python because Httpdapy was not meant to be Apache-specific. Httpdapy was designed to be cross-platform and in fact was initially written for the Netscape server (back then it was called Nsapy (1997). </p>
+  <p> This excerpt from the Httpdapy README file describes well the challenges and the solution provided by embedding Python within the HTTP server: </p>
+  <p> </p>
+  <div class="verbatim">
+   <pre>
+While developing my first WWW applications a few years back, I found
+that using CGI for programs that need to connect to relational
+databases (commercial or not) is too slow because every hit requires
+loading of the interpreter executable which can be megabytes in size,
+any database libraries that can themselves be pretty big, plus, the
+database connection/authentication process carries a very significant
+overhead because it involves things like DNS resolutions, encryption,
+memory allocation, etc.. Under pressure to speed up the application, I
+nearly gave up the idea of using Python for the project and started
+researching other tools that claimed to specialize in www database
+integration. I did not have any faith in MS's ASP; was quite
+frustrated by Netscape LiveWire's slow performance and bugginess; Cold
+Fusion seemed promising, but I soon learned that writing in html-like
+tags makes programs as readable as assembly. Same is true for
+PHP. Besides, I *really* wanted to write things in Python.
+
+Around the same time the Internet Programming With Python book came
+out and the chapter describing how to embed Python within Netscape
+server immediately caught my attention.  I used the example in my
+project, and developed an improved version of what I later called
+Nsapy that compiled on both Windows NT and Solaris.
+
+Although Nsapy only worked with Netscape servers, it was a very
+intelligent generic OO design that, in the spirit of Python, that lent
+itself for easy portability to other web servers.
+
+Incidently, the popularity of Netscape's servers was taking a turn
+south, and so I set out to port Nsapy to other servers starting with
+the most popular one, Apache. And so from Nsapy was born Httpdapy.
+</pre>
+  </div> 
+  <p> ...continuing this saga, yours truly later learned that writing Httpdapy for every server is a task a little bigger and less interesting than I originally imagined. </p>
+  <p> Instead, it seemed like providing a Python counterpart to the popular Perl Apache extension mod_perl that would give Python users the same (or better) capability would be a much more exciting thing to do. </p>
+  <p> And so it was done. The first release of mod_python happened in May of 2000. </p>
+  <div class="navigation"> 
+   <p></p>
+   <hr> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="1.2 Flexibility" href="intr-flexibility.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="1. Introduction" href="introduction.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="2. Installation" href="installation.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="intr-flexibility.html">1.2 Flexibility</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="introduction.html">1. Introduction</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="installation.html">2. Installation</a> 
+   <hr> <span class="release-info">Release 3.2.8, documentation updated on February 19, 2006.</span> 
+  </div> 
+  <!--End of Navigation Panel-->   
+ </body>
+</html>

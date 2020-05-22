@@ -1,0 +1,63 @@
+<html>
+ <head></head>
+ <body>
+  HTTP/1.1 200 OK Server: nginx/1.10.2 Date: Fri, 22 May 2020 12:35:04 GMT Content-Type: text/html Content-Length: 4870 Last-Modified: Wed, 03 May 2017 07:23:45 GMT Connection: close ETag: "59098581-1306" Accept-Ranges: bytes    
+  <link rel="STYLESHEET" href="modpython.css" type="text/css"> 
+  <link rel="first" href="modpython.html" title="Mod_python Manual"> 
+  <link rel="contents" href="contents.html" title="Contents"> 
+  <link rel="index" href="genindex.html" title="Index"> 
+  <link rel="last" href="about.html" title="About this document..."> 
+  <link rel="help" href="about.html" title="About this document..."> 
+  <link REL="next" href="dir-other-po.html"> 
+  <link REL="prev" href="dir-other-par.html"> 
+  <link REL="parent" href="dir-other.html"> 
+  <link REL="next" href="dir-other-po.html"> 
+  <meta name="aesop" content="information"> 
+  <meta NAME="description" CONTENT="PythonOptimize"> 
+  <meta NAME="keywords" CONTENT="modpython"> 
+  <meta NAME="resource-type" CONTENT="document"> 
+  <meta NAME="distribution" CONTENT="global"> 
+  <title>5.4.9 PythonOptimize</title>   
+  <div class="navigation"> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="5.4.8 PythonAutoReload" href="dir-other-par.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="5.4 Other Directives" href="dir-other.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="5.4.10 PythonOption" href="dir-other-po.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="dir-other-par.html">5.4.8 PythonAutoReload</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="dir-other.html">5.4 Other Directives</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="dir-other-po.html">5.4.10 PythonOption</a> 
+   <br>
+   <hr> 
+  </div> 
+  <!--End of Navigation Panel--> 
+  <h2><a name="SECTION007490000000000000000">&nbsp;</a> <a name="l2h-262">&nbsp;</a> <br> 5.4.9 PythonOptimize </h2> 
+  <p> <b><em class="citetitle"><a href="http://httpd.apache.org/docs-2.0/mod/directive-dict.html#Syntax" title="Syntax:">Syntax:</a></em></b> PythonOptimize {On, Off} <br><em class="citetitle"><a href="http://httpd.apache.org/docs-2.0/mod/directive-dict.html#Default" title="Default:">Default:</a></em> PythonOptimize Off <br><em class="citetitle"><a href="http://httpd.apache.org/docs-2.0/mod/directive-dict.html#Context" title="Context:">Context:</a></em> server config <br><em class="citetitle"><a href="http://httpd.apache.org/docs-2.0/mod/directive-dict.html#Module" title="Module:">Module:</a></em> mod_python.c </p>
+  <p> Enables Python optimization. Same as the Python <b class="programopt">-O</b> option. </p>
+  <p> </p>
+  <div class="navigation"> 
+   <p></p>
+   <hr> 
+   <table align="center" width="100%" cellpadding="0" cellspacing="2"> 
+    <tbody>
+     <tr> 
+      <td><a rel="prev" title="5.4.8 PythonAutoReload" href="dir-other-par.html"><img src="previous.gif" border="0" height="32" alt="Previous Page" width="32"></a></td> 
+      <td><a rel="parent" title="5.4 Other Directives" href="dir-other.html"><img src="up.gif" border="0" height="32" alt="Up One Level" width="32"></a></td> 
+      <td><a rel="next" title="5.4.10 PythonOption" href="dir-other-po.html"><img src="next.gif" border="0" height="32" alt="Next Page" width="32"></a></td> 
+      <td align="center" width="100%">Mod_python Manual</td> 
+      <td><a rel="contents" title="Table of Contents" href="contents.html"><img src="contents.gif" border="0" height="32" alt="Contents" width="32"></a></td> 
+      <td><img src="blank.gif" border="0" height="32" alt="" width="32"></td> 
+      <td><a rel="index" title="Index" href="genindex.html"><img src="index.gif" border="0" height="32" alt="Index" width="32"></a></td> 
+     </tr>
+    </tbody>
+   </table> <b class="navlabel">Previous:</b> <a class="sectref" rel="prev" href="dir-other-par.html">5.4.8 PythonAutoReload</a> <b class="navlabel">Up:</b> <a class="sectref" rel="parent" href="dir-other.html">5.4 Other Directives</a> <b class="navlabel">Next:</b> <a class="sectref" rel="next" href="dir-other-po.html">5.4.10 PythonOption</a> 
+   <hr> <span class="release-info">Release 3.2.8, documentation updated on February 19, 2006.</span> 
+  </div> 
+  <!--End of Navigation Panel-->   
+ </body>
+</html>

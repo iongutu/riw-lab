@@ -1,0 +1,1039 @@
+HTTP/1.1 200 OK
+Date: Fri, 22 May 2020 12:35:17 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+Content-Length: 45264
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>RFC 1867 - Form-based File Upload in HTML (RFC1867)</title>
+<meta name="description" content="RFC 1867 - Form-based File Upload in HTML"/>
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" type="text/css" href="http://www.faqs.org/style/faqs.css" />
+<script type="text/javascript" src="http://www.faqs.org/style/rs.js"></script>
+<script type="text/javascript" src="http://www.faqs.org/utils.js"></script>
+<style type="text/css">
+#hsublogo,#navigation{display:none;}
+.left {float:left;margin-left:20%;height:40px;}
+.right {float:right;margin-right:20%;height:40px;}
+.hr4 { clear: both;}
+</style>
+
+	<style type="text/css">
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.row {
+		  margin-right: -15px;
+		  margin-left: -15px;
+		}
+		.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+			display: table;
+			content: " ";
+		}
+		.btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+			clear: both;
+		}
+
+		.form-control {
+			display: block;
+			width: 100%;
+			height: 34px;
+			padding: 6px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #555;
+			background-color: #fff;
+			background-image: none;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+			-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		}
+		label {
+			display: inline-block;
+			max-width: 100%;
+			margin-bottom: 5px;
+			font-weight: 700;
+		}
+		.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+			position: relative;
+			min-height: 1px;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+		textarea.form-control {
+			height: auto;
+		}
+		.form-group {
+		  margin-bottom: 15px;
+		}
+		@media (min-width: 768px){
+			.col-sm-3 {
+			  width: 25%;
+			}
+			.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+			  float: left;
+			}
+			.col-sm-12 {
+				width: 100%;
+			}
+		}
+		.btn {
+			display: inline-block;
+			padding: 6px 12px;
+			margin-bottom: 0;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.42857143;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			background-image: none;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+		.btn-default:hover {
+			color: #333;
+			background-color: #e6e6e6;
+			border-color: #adadad;
+		}
+		.btn.focus, .btn:focus, .btn:hover {
+			color: #333;
+			text-decoration: none;
+		}
+		.btn-default {
+			color: #333;
+			background-color: #fff;
+			border-color: #ccc;
+		}
+		.alert {
+			padding: 15px;
+			margin-bottom: 20px;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+		.alert-danger {
+			color: #a94442;
+			background-color: #f2dede;
+			border-color: #ebccd1;
+		}
+		.alert .close {
+			display:none;
+		}
+  	#Comments_section{clear:both;}
+
+
+
+
+    .Comments_messagebox {text-align:center;color:#C52525;background-color:#FFEAEA;border:1px dotted #DB8686;width:100%;padding:10px;margin-left:auto;margin-right:auto;margin-bottom:15px;}";
+    
+    .Comments_form input { margin-left:10px;margin-right:10px;margin-top:5px;display:block;width:150px;}";
+    .Comments_form textarea { margin-left:10px;display:block;width:95%;height:140px;}";
+    .Comments_form div.Comments_name {float:left;}";
+    .Comments_form div.Comments_mail {float:left;position:relative;}";
+    .Comments_form div.Comments_showmail {margin-left:8px;color:gray;font-size:8pt;}";
+    .Comments_form div.Comments_text {clear:left;}";
+    .Comments_form .Comments_showmail label {display:inline;margin:2px;width:auto;}";
+    .Comments_form .Comments_showmail input {display:inline;margin:0px;width:auto;border:none;background-color:transparent;}";
+
+    .Comments_form {width:96%; padding:10px 20px; margin: auto;}";
+  </style>
+
+	<style type="text/css">
+		.Comments_form {background-color:#F7F7F5; border-radius:8px; padding:10px; border:1px solid #E4F0E2; border-top:3px solid #E5E5D5; }
+		.Comments_form h4 {border-bottom:2px solid #E5E5D5; padding-bottom:10px; margin:2px 0 10px 0;}
+
+		.Comments_showmail {font-size:12px;line-height:normal;}
+		.Comments_text span {font-size:12px;line-height:normal;color:gray;margin-left:10px}
+		.Comments_showmail input {width:12px;height:13px;}
+		.Comments_btn {margin-top:10px;}
+
+    .Comments_commentsbox {width:100%; margin:auto; margin-bottom:20px; margin-top:20px; line-height:normal;}
+
+		.Comments_comment {position:relative; width:100%; border-top:4px solid #C4DAE5; border-radius:10px; border-right:1px solid #E8F1F7; border-left: 1px solid #E8F1F7; padding:2px; padding-top:8px;  margin-right:10px; background-repeat:repeat-x;background-position:top;margin-bottom:12px; background-color:#FBFBFB; background-image:url('/images/comments.back.1.png')}
+		.Comments_comment_alt {background-image:url('/images/comments.back.2.png');}
+
+    .Comments_info {height:32px; overflow:hidden; position:absolute; top:-8px; left:5px; right:5px; border-bottom:1px solid #D9E4EA; padding-top:10px;}
+
+    .Comments_balloon { z-index:2; text-align:center; font-weight:bold;text-decoration:none;color:#CC0000;font-size:7pt; width:23px; height:21px; position:absolute; top:0; left:0; padding-top:0px; line-height:19px; margin:0; background-image:url('/images/comments.balloon.gif'); background-repeat:no-repeat; background-position: 0 0; }
+		.Comments_link { text-decoration:none;color:#CC0000;font-size:7pt; border:none;}
+
+    .Comments_date {float:right;font-size:12px;color:gray;display:inline;opacity:0.5;padding-top:2px; }
+    .Comments_moderate {float:right;display:inline;position:relative;margin-left:5px;}
+		.Comments_user { font-size:13px;display:inline;position:relative;top:-0px;left:29px;}
+		.Comments_user a { font-weight:bold;text-decoration:none;color:#006699; }
+
+		.Comments_text { margin-left:30px;color:#666;margin-top:27px; padding-bottom:10px; }
+		.Comments_clear {clear:both;line-height:1px;height:1px;display:inline;}
+
+		#qaComments {text-align:left;}
+
+	</style>
+		<script type="text/javascript">
+		//<![CDATA[
+		function confirmModerate(url,num){
+		  url = url + '?Comments[do]=mod&Comments[id]=' + num + '#Comments_' + num;
+		  if (confirm('Do you want to report this comment as inappropriate?')) location.href=url;
+		  return 0;
+		}
+		function validate_form(frm) {
+		  var value = '';
+		  var errFlag = new Array();
+		  _qfMsg = '';
+
+		  $("#Comments_gname").addClass('has-error');
+
+		  value = frm.elements['Comments[name]'].value;
+		  if (value == '' && !errFlag['name']) {
+		    errFlag['name'] = true;
+		    _qfMsg = _qfMsg + '\n - Please enter your name';
+		  }
+			if (errFlag['name']) $("#Comments_gname").addClass('has-error');
+			else $("#Comments_gname").removeClass('has-error');
+
+		  value = frm.elements['Comments[mail]'].value;
+		  if (value == '' && !errFlag['mail']) {
+		    errFlag['mail'] = true;
+		    _qfMsg = _qfMsg + '\n - Please enter your e-mail';
+		  }
+		  var regex = /^((\"[^\"\f\n\r\t\v\b]+\")|([\w\!\#\$\%\&'\*\+\-\~\/\^\`\|\{\}]+(\.[\w\!\#\$\%\&'\*\+\-\~\/\^\`\|\{\}]+)*))@((\[(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))\])|(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))|((([A-Za-z0-9\-])+\.)+[A-Za-z\-]+))$/;
+		  if (value != '' &&!regex.test(value) && !errFlag['mail']) {
+		    errFlag['mail'] = true;
+		    _qfMsg = _qfMsg + '\n - E-mail address format is invalid';
+		  }
+		  if (errFlag['mail']) $("#Comments_gmail").addClass('has-error');
+			else $("#Comments_gmail").removeClass('has-error');
+
+		  value = frm.elements['Comments[text]'].value;
+		  if (value == '' && !errFlag['text']) {
+		    errFlag['text'] = true;
+		    _qfMsg = _qfMsg + '\n - Please enter your comment';
+		  }
+		  if (value.length<50 && !errFlag['text']) {
+		    errFlag['text'] = true;
+		    _qfMsg = _qfMsg + '\n - Comment is too short (50 characters min.)';
+		  }
+		  if (value.length>4000 && !errFlag['text']) {
+		    errFlag['text'] = true;
+		    _qfMsg = _qfMsg + '\n - Comment is too long (4000 characters max)';
+		  }
+		  if (errFlag['text']) $("#Comments_gtext").addClass('has-error');
+			else $("#Comments_gtext").removeClass('has-error');
+
+		  if (_qfMsg != '') {
+		    _qfMsg = 'Invalid information entered:' + _qfMsg + '\nPlease correct these fields.';
+		    alert(_qfMsg);
+		    return false;
+		  }
+		  return true;
+		}
+
+		//]]>
+		</script>
+
+		<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('cdrecaptcha', {
+          'sitekey' : '6LfSIsEUAAAAAIeFL5JM0JT374koFwBblmBKFMKL'
+        });
+      };
+    </script>
+<script type="text/javascript">
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+</head>
+
+<body>
+
+<!-- header -->
+<div id="hbar"></div>
+<div id="body">
+	<div id="page">
+	<div id="header">
+
+		<div id="hsearch">
+		</div>
+		<div id="hlogo"><a href="http://www.faqs.org"><img src="/images/faqs.org.png" alt="faqs.org" /></a></div>
+		<div id="hsublogo">
+			<h1>RFC 1867 - Form-based File Upload in HTML</h1>
+		</div>
+	</div>
+
+		<div id="navigation">faqs.org</div>
+		
+	<div id="content">
+
+<!-- /header -->
+
+
+<div id="hwelcome">
+	<img src="http://www.faqs.org/images/library.jpg" alt="faqs.org - Internet FAQ Archives" style="width:150px;height:62px;" />
+	<h1>RFC 1867 - Form-based File Upload in HTML</h1>	
+	<g:plusone></g:plusone>
+	<!--MENU_HDR-->
+</div>
+
+
+
+<ul id='hnavbar'>
+	<li><a href="/rfcs/">Internet RFC Index</a></li>
+	<li><a href="/faqs/">Usenet FAQ Index</a></li>
+	<li><a href="/contrib/">Other FAQs</a></li>
+	<li><a href="/docs/">Documents</a></li>
+
+	<li><a href="/tools/">Tools</a></li>
+	<li style="margin-top:8px;"><b>Search</b></li>
+	<li><a href="/faqs/faqsearch.html">Search FAQs</a></li>
+    <li><a href="/rfcs/rfcsearch.html">Search RFCs</a></li>
+
+	<li style="margin-top:8px;"><b>IFC Home</b></li>
+	<li><a href="http://www.city-data.com/">Cities</a></li>
+
+	<li><a href="http://www.country-data.com/">Countries</a></li>
+	<li><a href="http://www.hospital-data.com/">Hospitals</a></li>
+	<li><a href="http://www.webhostingratings.com/">Web Hosting Ratings</a></li>
+</ul>
+
+
+<div id='fmaincolumn'>
+
+
+
+<table><tr>
+
+<td valign="top" class="fmtable">
+<hr class="hr1" />
+
+<!-- SEARCH -->
+<table style='text-align:center;margin: 0px auto;'><tr><td>
+<form action="http://www.faqs.org/rfcs/rfcresults.html" id="cse-search-box">
+	<input type="hidden" name="cx" value="012585674615115756003:0rnper8ld_o" />
+	<input type="hidden" name="cof" value="FORID:11" />
+	<input type="hidden" name="ie" value="UTF-8" />
+	<input type="hidden" name="hq" value="more:rfc" />
+	<table>
+		<tr><td><h2>Search the RFC Archives</h2></td></tr>
+
+		<tr><td><input type="text" name="q" style="width:240px;" />&nbsp;<input type="submit" name="sa" value="Search" style="margin-left: 0px;"/></td></tr>
+	</table>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script> 
+</td>
+<td style='width:10%;'></td>
+<td>
+<form method="post" action="/rfcs/rfcdisplay.html">
+<h2>Or Display the document by number</h2>
+<table><tr>
+<td><input name=display size=9></td>
+<td><input type="submit" value="Display RFC By Number"></td>
+</tr>
+
+</table>
+</form>
+</td></tr>
+</table>
+<br/><hr class="hr4" />
+<!-- /SEARCH -->
+<!-- RFC MENU --><DIV ALIGN=CENTER>[ <a href='/rfcs/'>RFC Index</a> | <a href='/faqs/'>Usenet FAQs</a> | <a href='/contrib/'>Web FAQs</a> | <a href='/docs/'>Documents</a> | <a href='http://www.city-data.com/'>Cities</a> | <a href='/patents/'>Patents</a> | <a href='/abstracts/'>Abstracts</a> | <a href='http://www.city-data.com/property-taxes.html'>Property taxes</a> ]</DIV>
+<PRE>
+
+Network Working Group                                           E. Nebel
+Request For Comments: 1867                                   L. Masinter
+Category: Experimental                                 Xerox Corporation
+                                                           November 1995
+
+                     Form-based File Upload in HTML
+
+Status of this Memo
+
+   This memo defines an Experimental Protocol for the Internet
+   community.  This memo does not specify an Internet standard of any
+   kind.  Discussion and suggestions for improvement are requested.
+   Distribution of this memo is unlimited.
+
+1. Abstract
+
+   Currently, HTML forms allow the producer of the form to request
+   information from the user reading the form.  These forms have proven
+   useful in a wide variety of applications in which input from the user
+   is necessary.  However, this capability is limited because HTML forms
+   don't provide a way to ask the user to submit files of data.  Service
+   providers who need to get files from the user have had to implement
+   custom user applications.  (Examples of these custom browsers have
+   appeared on the www-talk mailing list.)  Since file-upload is a
+   feature that will benefit many applications, this proposes an
+   extension to HTML to allow information providers to express file
+   upload requests uniformly, and a MIME compatible representation for
+   file upload responses.  This also includes a description of a
+   backward compatibility strategy that allows new servers to interact
+   with the current HTML user agents.
+
+   The proposal is independent of which version of HTML it becomes a
+   part.
+
+2.  HTML forms with file submission
+
+   The current HTML specification defines eight possible values for the
+   attribute TYPE of an INPUT element: CHECKBOX, HIDDEN, IMAGE,
+   PASSWORD, RADIO, RESET, SUBMIT, TEXT.
+
+   In addition, it defines the default ENCTYPE attribute of the FORM
+   element using the POST METHOD to have the default value
+   "application/x-www-form-urlencoded".
+
+   This proposal makes two changes to HTML:
+
+   1) Add a FILE option for the TYPE attribute of INPUT.
+   2) Allow an ACCEPT attribute for INPUT tag, which is a list of
+      media types or type patterns allowed for the input.
+
+   In addition, it defines a new MIME media type, multipart/form-data,
+   and specifies the behavior of HTML user agents when interpreting a
+   form with ENCTYPE="multipart/form-data" and/or &lt;INPUT type="file"&gt;
+   tags.
+
+   These changes might be considered independently, but are all
+   necessary for reasonable file upload.
+
+   The author of an HTML form who wants to request one or more files
+   from a user would write (for example):
+
+    &lt;FORM ENCTYPE="multipart/form-data" ACTION="_URL_" METHOD=POST&gt;
+
+    File to process: &lt;INPUT NAME="userfile1" TYPE="file"&gt;
+
+    &lt;INPUT TYPE="submit" VALUE="Send File"&gt;
+
+    &lt;/FORM&gt;
+
+   The change to the HTML DTD is to add one item to the entity
+   "InputType". In addition, it is proposed that the INPUT tag have an
+   ACCEPT attribute, which is a list of comma-separated media types.
+
+  ... (other elements) ...
+
+  &lt;!ENTITY % InputType "(TEXT | PASSWORD | CHECKBOX |
+                         RADIO | SUBMIT | RESET |
+                         IMAGE | HIDDEN | FILE )"&gt;
+  &lt;!ELEMENT INPUT - 0 EMPTY&gt;
+  &lt;!ATTLIST INPUT
+          TYPE %InputType TEXT
+          NAME CDATA #IMPLIED  -- required for all but submit and reset
+          VALUE CDATA #IMPLIED
+          SRC %URI #IMPLIED  -- for image inputs --
+          CHECKED (CHECKED) #IMPLIED
+          SIZE CDATA #IMPLIED  --like NUMBERS,
+                                  but delimited with comma, not space
+          MAXLENGTH NUMBER #IMPLIED
+          ALIGN (top|middle|bottom) #IMPLIED
+          ACCEPT CDATA #IMPLIED --list of content types
+          &gt;
+
+  ... (other elements) ...
+
+3.  Suggested implementation
+
+   While user agents that interpret HTML have wide leeway to choose the
+   most appropriate mechanism for their context, this section suggests
+   how one class of user agent, WWW browsers, might implement file
+   upload.
+
+3.1 Display of FILE widget
+
+   When a INPUT tag of type FILE is encountered, the browser might show
+   a display of (previously selected) file names, and a "Browse" button
+   or selection method. Selecting the "Browse" button would cause the
+   browser to enter into a file selection mode appropriate for the
+   platform. Window-based browsers might pop up a file selection window,
+   for example. In such a file selection dialog, the user would have the
+   option of replacing a current selection, adding a new file selection,
+   etc. Browser implementors might choose let the list of file names be
+   manually edited.
+
+   If an ACCEPT attribute is present, the browser might constrain the
+   file patterns prompted for to match those with the corresponding
+   appropriate file extensions for the platform.
+
+3.2 Action on submit
+
+   When the user completes the form, and selects the SUBMIT element, the
+   browser should send the form data and the content of the selected
+   files.  The encoding type application/x-www-form-urlencoded is
+   inefficient for sending large quantities of binary data or text
+   containing non-ASCII characters.  Thus, a new media type,
+   multipart/form-data, is proposed as a way of efficiently sending the
+   values associated with a filled-out form from client to server.
+
+3.3 use of multipart/form-data
+
+   The definition of multipart/form-data is included in section 7.  A
+   boundary is selected that does not occur in any of the data. (This
+   selection is sometimes done probabilisticly.) Each field of the form
+   is sent, in the order in which it occurs in the form, as a part of
+   the multipart stream.  Each part identifies the INPUT name within the
+   original HTML form. Each part should be labelled with an appropriate
+   content-type if the media type is known (e.g., inferred from the file
+   extension or operating system typing information) or as
+   application/octet-stream.
+
+   If multiple files are selected, they should be transferred together
+   using the multipart/mixed format.
+
+   While the HTTP protocol can transport arbitrary BINARY data, the
+   default for mail transport (e.g., if the ACTION is a "mailto:" URL)
+   is the 7BIT encoding.  The value supplied for a part may need to be
+   encoded and the "content-transfer-encoding" header supplied if the
+   value does not conform to the default encoding.  [See section 5 of
+   <A HREF="/rfcs/rfc1521.html">RFC 1521</A> for more details.]
+
+   The original local file name may be supplied as well, either as a
+   'filename' parameter either of the 'content-disposition: form-data'
+   header or in the case of multiple files in a 'content-disposition:
+   file' header of the subpart. The client application should make best
+   effort to supply the file name; if the file name of the client's
+   operating system is not in US-ASCII, the file name might be
+   approximated or encoded using the method of <A HREF="/rfcs/rfc1522.html">RFC 1522</A>.  This is a
+   convenience for those cases where, for example, the uploaded files
+   might contain references to each other, e.g., a TeX file and its .sty
+   auxiliary style description.
+
+   On the server end, the ACTION might point to a HTTP URL that
+   implements the forms action via CGI. In such a case, the CGI program
+   would note that the content-type is multipart/form-data, parse the
+   various fields (checking for validity, writing the file data to local
+   files for subsequent processing, etc.).
+
+3.4 Interpretation of other attributes
+
+   The VALUE attribute might be used with &lt;INPUT TYPE=file&gt; tags for a
+   default file name. This use is probably platform dependent.  It might
+   be useful, however, in sequences of more than one transaction, e.g.,
+   to avoid having the user prompted for the same file name over and
+   over again.
+
+   The SIZE attribute might be specified using SIZE=width,height, where
+   width is some default for file name width, while height is the
+   expected size showing the list of selected files.  For example, this
+   would be useful for forms designers who expect to get several files
+   and who would like to show a multiline file input field in the
+   browser (with a "browse" button beside it, hopefully).  It would be
+   useful to show a one line text field when no height is specified
+   (when the forms designer expects one file, only) and to show a
+   multiline text area with scrollbars when the height is greater than 1
+   (when the forms designer expects multiple files).
+
+4.  Backward compatibility issues
+
+   While not necessary for successful adoption of an enhancement to the
+   current WWW form mechanism, it is useful to also plan for a migration
+   strategy: users with older browsers can still participate in file
+   upload dialogs, using a helper application. Most current web browers,
+   when given &lt;INPUT TYPE=FILE&gt;, will treat it as &lt;INPUT TYPE=TEXT&gt; and
+   give the user a text box. The user can type in a file name into this
+   text box. In addition, current browsers seem to ignore the ENCTYPE
+   parameter in the &lt;FORM&gt; element, and always transmit the data as
+   application/x-www-form-urlencoded.
+
+   Thus, the server CGI might be written in a way that would note that
+   the form data returned had content-type application/x-www-form-
+   urlencoded instead of multipart/form-data, and know that the user was
+   using a browser that didn't implement file upload.
+
+   In this case, rather than replying with a "text/html" response, the
+   CGI on the server could instead send back a data stream that a helper
+   application might process instead; this would be a data stream of
+   type "application/x-please-send-files", which contains:
+
+   * The (fully qualified) URL to which the actual form data should
+     be posted (terminated with CRLF)
+   * The list of field names that were supposed to be file contents
+     (space separated, terminated with CRLF)
+   * The entire original application/x-www-form-urlencoded form data
+     as originally sent from client to server.
+
+   In this case, the browser needs to be configured to process
+   application/x-please-send-files to launch a helper application.
+
+   The helper would read the form data, note which fields contained
+   'local file names' that needed to be replaced with their data
+   content, might itself prompt the user for changing or adding to the
+   list of files available, and then repackage the data &amp; file contents
+   in multipart/form-data for retransmission back to the server.
+
+   The helper would generate the kind of data that a 'new' browser
+   should actually have sent in the first place, with the intention that
+   the URL to which it is sent corresponds to the original ACTION URL.
+   The point of this is that the server can use the *same* CGI to
+   implement the mechanism for dealing with both old and new browsers.
+
+   The helper need not display the form data, but *should* ensure that
+   the user actually be prompted about the suitability of sending the
+   files requested (this is to avoid a security problem with malicious
+   servers that ask for files that weren't actually promised by the
+
+   user.) It would be useful if the status of the transfer of the files
+   involved could be displayed.
+
+5.  Other considerations
+
+5.1 Compression, encryption
+
+   This scheme doesn't address the possible compression of files.  After
+   some consideration, it seemed that the optimization issues of file
+   compression were too complex to try to automatically have browsers
+   decide that files should be compressed.  Many link-layer transport
+   mechanisms (e.g., high-speed modems) perform data compression over
+   the link, and optimizing for compression at this layer might not be
+   appropriate. It might be possible for browsers to optionally produce
+   a content-transfer-encoding of x-compress for file data, and for
+   servers to decompress the data before processing, if desired; this
+   was left out of the proposal, however.
+
+   Similarly, the proposal does not contain a mechanism for encryption
+   of the data; this should be handled by whatever other mechanisms are
+   in place for secure transmission of data, whether via secure HTTP or
+   mail.
+
+5.2 Deferred file transmission
+
+   In some situations, it might be advisable to have the server validate
+   various elements of the form data (user name, account, etc.)  before
+   actually preparing to receive the data.  However, after some
+   consideration, it seemed best to require that servers that wish to do
+   this should implement this as a series of forms, where some of the
+   data elements that were previously validated might be sent back to
+   the client as 'hidden' fields, or by arranging the form so that the
+   elements that need validation occur first.  This puts the onus of
+   maintaining the state of a transaction only on those servers that
+   wish to build a complex application, while allowing those cases that
+   have simple input needs to be built simply.
+
+   The HTTP protocol may require a content-length for the overall
+   transmission. Even if it were not to do so, HTTP clients are
+   encouraged to supply content-length for overall file input so that a
+   busy server could detect if the proposed file data is too large to be
+   processed reasonably and just return an error code and close the
+   connection without waiting to process all of the incoming data.  Some
+   current implementations of CGI require a content-length in all POST
+   transactions.
+
+   If the INPUT tag includes the attribute MAXLENGTH, the user agent
+   should consider its value to represent the maximum Content-Length (in
+
+   bytes) which the server will accept for transferred files.  In this
+   way, servers can hint to the client how much space they have
+   available for a file upload, before that upload takes place.  It is
+   important to note, however, that this is only a hint, and the actual
+   requirements of the server may change between form creation and file
+   submission.
+
+   In any case, a HTTP server may abort a file upload in the middle of
+   the transaction if the file being received is too large.
+
+5.3 Other choices for return transmission of binary data
+
+   Various people have suggested using new mime top-level type
+   "aggregate", e.g., aggregate/mixed or a content-transfer-encoding of
+   "packet" to express indeterminate-length binary data, rather than
+   relying on the multipart-style boundaries.  While we are not opposed
+   to doing so, this would require additional design and standardization
+   work to get acceptance of "aggregate".  On the other hand, the
+   'multipart' mechanisms are well established, simple to implement on
+   both the sending client and receiving server, and as efficient as
+   other methods of dealing with multiple combinations of binary data.
+
+5.4 Not overloading &lt;INPUT&gt;:
+
+   Various people have wondered about the advisability of overloading
+   'INPUT' for this function, rather than merely providing a different
+   type of FORM element.  Among other considerations, the migration
+   strategy which is allowed when using &lt;INPUT&gt; is important.  In
+   addition, the &lt;INPUT&gt; field *is* already overloaded to contain most
+   kinds of data input; rather than creating multiple kinds of &lt;INPUT&gt;
+   tags, it seems most reasonable to enhance &lt;INPUT&gt;.  The 'type' of
+   INPUT is not the content-type of what is returned, but rather the
+   'widget-type'; i.e., it identifies the interaction style with the
+   user.  The description here is carefully written to allow &lt;INPUT
+   TYPE=FILE&gt; to work for text browsers or audio-markup.
+
+5.5 Default content-type of field data
+
+   Many input fields in HTML are to be typed in. There has been some
+   ambiguity as to how form data should be transmitted back to servers.
+   Making the content-type of &lt;INPUT&gt; fields be text/plain clearly
+   disambiguates that the client should properly encode the data before
+   sending it back to the server with CRLFs.
+
+5.6 Allow form ACTION to be "mailto:"
+
+   Independent of this proposal, it would be very useful for HTML
+   interpreting user agents to allow a ACTION in a form to be a
+
+   "mailto:" URL. This seems like a good idea, with or without this
+   proposal. Similarly, the ACTION for a HTML form which is received via
+   mail should probably default to the "reply-to:" of the message.
+   These two proposals would allow HTML forms to be served via HTTP
+   servers but sent back via mail, or, alternatively, allow HTML forms
+   to be sent by mail, filled out by HTML-aware mail recipients, and the
+   results mailed back.
+
+5.7 Remote files with third-party transfer
+
+   In some scenarios, the user operating the client software might want
+   to specify a URL for remote data rather than a local file. In this
+   case, is there a way to allow the browser to send to the client a
+   pointer to the external data rather than the entire contents? This
+   capability could be implemented, for example, by having the client
+   send to the server data of type "message/external-body" with
+   "access-type" set to, say, "uri", and the URL of the remote data in
+   the body of the message.
+
+5.8 File transfer with ENCTYPE=x-www-form-urlencoded
+
+   If a form contains &lt;INPUT TYPE=file&gt; elements but does not contain an
+   ENCTYPE in the enclosing &lt;FORM&gt;, the behavior is not specified.  It
+   is probably inappropriate to attempt to URN-encode large quantities
+   of data to servers that don't expect it.
+
+5.9 CRLF used as line separator
+
+   As with all MIME transmissions, CRLF is used as the separator for
+   lines in a POST of the data in multipart/form-data.
+
+5.10 Relationship to multipart/related
+
+   The MIMESGML group is proposing a new type called multipart/related.
+   While it contains similar features to multipart/form-data, the use
+   and application of form-data is different enough that form-data is
+   being described separately.
+
+   It might be possible at some point to encode the result of HTML forms
+   (including files) in a multipart/related body part; this is not
+   incompatible with this proposal.
+
+5.11 Non-ASCII field names
+
+   Note that mime headers are generally required to consist only of 7-
+   bit data in the US-ASCII character set. Hence field names should be
+   encoded according to the prescriptions of <A HREF="/rfcs/rfc1522.html">RFC 1522</A> if they contain
+   characters outside of that set. In HTML 2.0, the default character
+
+   set is ISO-8859-1, but non-ASCII characters in field names should be
+   encoded.
+
+6. Examples
+
+   Suppose the server supplies the following HTML:
+
+     &lt;FORM ACTION="http://server.dom/cgi/handle"
+           ENCTYPE="multipart/form-data"
+           METHOD=POST&gt;
+     What is your name? &lt;INPUT TYPE=TEXT NAME=submitter&gt;
+     What files are you sending? &lt;INPUT TYPE=FILE NAME=pics&gt;
+     &lt;/FORM&gt;
+
+   and the user types "Joe Blow" in the name field, and selects a text
+   file "file1.txt" for the answer to 'What files are you sending?'
+
+   The client might send back the following data:
+
+        Content-type: multipart/form-data, boundary=AaB03x
+
+        --AaB03x
+        content-disposition: form-data; name="field1"
+
+        Joe Blow
+        --AaB03x
+        content-disposition: form-data; name="pics"; filename="file1.txt"
+        Content-Type: text/plain
+
+         ... contents of file1.txt ...
+        --AaB03x--
+
+   If the user also indicated an image file "file2.gif" for the answer
+   to 'What files are you sending?', the client might client might send
+   back the following data:
+
+        Content-type: multipart/form-data, boundary=AaB03x
+
+        --AaB03x
+        content-disposition: form-data; name="field1"
+
+        Joe Blow
+        --AaB03x
+        content-disposition: form-data; name="pics"
+        Content-type: multipart/mixed, boundary=BbC04y
+
+        --BbC04y
+        Content-disposition: attachment; filename="file1.txt"
+
+        Content-Type: text/plain
+
+        ... contents of file1.txt ...
+        --BbC04y
+        Content-disposition: attachment; filename="file2.gif"
+        Content-type: image/gif
+        Content-Transfer-Encoding: binary
+
+          ...contents of file2.gif...
+        --BbC04y--
+        --AaB03x--
+
+7. Registration of multipart/form-data
+
+   The media-type multipart/form-data follows the rules of all multipart
+   MIME data streams as outlined in <A HREF="/rfcs/rfc1521.html">RFC 1521</A>. It is intended for use in
+   returning the data that comes about from filling out a form. In a
+   form (in HTML, although other applications may also use forms), there
+   are a series of fields to be supplied by the user who fills out the
+   form. Each field has a name. Within a given form, the names are
+   unique.
+
+   multipart/form-data contains a series of parts. Each part is expected
+   to contain a content-disposition header where the value is "form-
+   data" and a name attribute specifies the field name within the form,
+   e.g., 'content-disposition: form-data; name="xxxxx"', where xxxxx is
+   the field name corresponding to that field. Field names originally in
+   non-ASCII character sets may be encoded using the method outlined in
+   <A HREF="/rfcs/rfc1522.html">RFC 1522</A>.
+
+   As with all multipart MIME types, each part has an optional Content-
+   Type which defaults to text/plain.  If the contents of a file are
+   returned via filling out a form, then the file input is identified as
+   application/octet-stream or the appropriate media type, if known.  If
+   multiple files are to be returned as the result of a single form
+   entry, they can be returned as multipart/mixed embedded within the
+   multipart/form-data.
+
+   Each part may be encoded and the "content-transfer-encoding" header
+   supplied if the value of that part does not conform to the default
+   encoding.
+
+   File inputs may also identify the file name. The file name may be
+   described using the 'filename' parameter of the "content-disposition"
+   header. This is not required, but is strongly recommended in any case
+   where the original filename is known. This is useful or necessary in
+   many applications.
+
+8. Security Considerations
+
+   It is important that a user agent not send any file that the user has
+   not explicitly asked to be sent. Thus, HTML interpreting agents are
+   expected to confirm any default file names that might be suggested
+   with &lt;INPUT TYPE=file VALUE="yyyy"&gt;.  Never have any hidden fields be
+   able to specify any file.
+
+   This proposal does not contain a mechanism for encryption of the
+   data; this should be handled by whatever other mechanisms are in
+   place for secure transmission of data, whether via secure HTTP, or by
+   security provided by MOSS (described in <A HREF="/rfcs/rfc1848.html">RFC 1848</A>).
+
+   Once the file is uploaded, it is up to the receiver to process and
+   store the file appropriately.
+
+9.  Conclusion
+
+   The suggested implementation gives the client a lot of flexibility in
+   the number and types of files it can send to the server, it gives the
+   server control of the decision to accept the files, and it gives
+   servers a chance to interact with browsers which do not support INPUT
+   TYPE "file".
+
+   The change to the HTML DTD is very simple, but very powerful.  It
+   enables a much greater variety of services to be implemented via the
+   World-Wide Web than is currently possible due to the lack of a file
+   submission facility.  This would be an extremely valuable addition to
+   the capabilities of the World-Wide Web.
+
+Authors' Addresses
+
+   Larry Masinter
+   Xerox Palo Alto Research Center
+   3333 Coyote Hill Road
+   Palo Alto, CA 94304
+
+   Phone:  (415) 812-4365
+   Fax:    (415) 812-4333
+   EMail:   <A HREF="mailto:masinter@parc.xerox.com">masinter@parc.xerox.com</A>
+
+   Ernesto Nebel
+   XSoft, Xerox Corporation
+   10875 Rancho Bernardo Road, Suite 200
+   San Diego, CA 92127-2116
+
+   Phone:  (619) 676-7817
+   Fax:    (619) 676-7865
+   EMail:   <A HREF="mailto:nebel@xsoft.sd.xerox.com">nebel@xsoft.sd.xerox.com</A>
+
+A. Media type registration for multipart/form-data
+
+Media Type name:
+ multipart
+
+Media subtype name:
+ form-data
+
+Required parameters:
+ none
+
+Optional parameters:
+ none
+
+Encoding considerations:
+ No additional considerations other than as for other multipart types.
+
+Published specification:
+ <A HREF="/rfcs/rfc1867.html">RFC 1867</A>
+
+Security Considerations
+
+  The multipart/form-data type introduces no new security
+  considerations beyond what might occur with any of the enclosed
+  parts.
+
+References
+
+[<A HREF="/rfcs/rfc1521.html">RFC 1521</A>] MIME (Multipurpose Internet Mail Extensions) Part One:
+           Mechanisms for Specifying and Describing the Format of
+           Internet Message Bodies.  N. Borenstein &amp; N. Freed.
+           September 1993.
+
+[<A HREF="/rfcs/rfc1522.html">RFC 1522</A>] MIME (Multipurpose Internet Mail Extensions) Part Two:
+           Message Header Extensions for Non-ASCII Text. K. Moore.
+           September 1993.
+
+[<A HREF="/rfcs/rfc1806.html">RFC 1806</A>] Communicating Presentation Information in Internet
+           Messages: The Content-Disposition Header. R. Troost &amp; S.
+           Dorner, June 1995.
+
+</PRE>
+&nbsp;<br>
+<div id="Comments_section">
+<h2 style='margin-bottom:0px;'>User Contributions:</h2>
+<div class="Comments_commentsbox" style=""><div class="Comments_comment" ><div class="Comments_info"><div class="Comments_balloon"> <a href="/rfcs/rfc1867.html#Comments_1" id="Comments_1" rel="nofollow" class="Comments_link">1</a> </div><div class="Comments_user"><span style="font-weight:bold;text-decoration:none;color:#006699;">Chandan</span></div><div class="Comments_moderate"><a href="javascript:void(0);" onclick="confirmModerate('/rfcs/rfc1867.html','1');return false;" title="Report this comment as inappropriate"><img src="/images/comment.moderate.gif" alt="Report this comment as inappropriate" width="11" height="11" border="0" /></a></div><div class="Comments_date">Mar 21, 2007 @ 7:07 am</div></div><div class="Comments_text">This was really a good one! I read this with a question that whether on upload the server can get the local file path. I got the answer that it can only get the filename.</div></div><div class="Comments_comment Comments_comment_alt" ><div class="Comments_info"><div class="Comments_balloon"> <a href="/rfcs/rfc1867.html#Comments_2" id="Comments_2" rel="nofollow" class="Comments_link">2</a> </div><div class="Comments_user"><a href="mailto:johannazanza [at] yahoo [dot] com">johann</a></div><div class="Comments_moderate"><a href="javascript:void(0);" onclick="confirmModerate('/rfcs/rfc1867.html','2');return false;" title="Report this comment as inappropriate"><img src="/images/comment.moderate.gif" alt="Report this comment as inappropriate" width="11" height="11" border="0" /></a></div><div class="Comments_date">Jul 22, 2011 @ 2:02 am</div></div><div class="Comments_text">What are the values that can be used on the ACCEPT parameter?<br />
+<br />
+Is it possible to use the browse button to select a folder, not a file? not necessarily to upload the folder. But just a way to specify the local folder path through the use of a BROWSE button, provided by the file upload textbox, instead of the user pasting or typing the folder path to the textbox provided.<br />
+<br />
+Hoping for a quick reply.</div></div></div>
+
+		<!-- cmtcode.2.4 -->
+
+		<div class="Comments_form" id="Comments_form">
+
+		<h4>Comment about this RFC, ask questions, or add new information about this topic:</h4>
+
+		
+
+		<form action="#Comments_form" method="post" onsubmit="return validate_form(this);" style="margin:0px;padding:0px;">
+			<input type="hidden" name="Comments[do]" value="add" style="display:none" />
+			<input type="hidden" name="Comments[page]" value="/rfcs/rfc1867.html" style="display:none" />
+
+			<div class="row">
+				<div class="col-sm-3 form-group" id="Comments_gname">
+					<label for="Comments_name" class="control-label">Name:</label>
+					<input type="text" name="Comments[name]" value="" id="Comments_name" class="form-control" />
+				</div>
+				<div class="col-sm-3 form-group" id="Comments_gmail">
+					<label for="Comments_mail" class="control-label">E-mail:</label>
+					<input type="text" name="Comments[mail]" value="" id="Comments_mail" class="form-control" />
+					<div class="Comments_showmail">
+						<input type="checkbox" name="Comments[showmail]" value="1" id="Comments_showmail" />
+						<label for="Comments_showmail">Show my email publicly</label>
+					</div>
+				</div>
+				<div class="col-sm-6 form-group">
+					<label for="cdrecaptcha">Human Verification:</label>
+					<div id="cdrecaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 form-group" id="Comments_gtext">
+					<label for="Comments_text" class="control-label">Public Comment: <span>(50-4000 characters)</span></label>
+					<textarea name="Comments[text]" id="Comments_text" class="form-control" rows="5" ></textarea>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 form-group">
+					<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send comment</button>
+				</div>
+			</div>
+
+		</form>
+		</div>
+		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script><br/>
+</div>
+
+<div align="center">
+<table border="0" cellpadding="3" width="100%" cellspacing="3">
+<tr><td width="45%">
+<p align="left">Previous: <a href="/rfcs/rfc1866.html">RFC 1866 - Hypertext Markup Language - 2.0</a>
+</p></td><td width="10%">&nbsp;</td><td width="45%">
+<p align="right">Next: <a href="/rfcs/rfc1868.html">RFC 1868 - ARP Extension - UNARP</a>
+</p></td></tr></table></div><p align="right">&nbsp;</p>
+<!--RFC_COMMENTS-->
+<!-- RFC MENU --><DIV ALIGN=CENTER>[ <a href='/rfcs/'>RFC Index</a> | <a href='/faqs/'>Usenet FAQs</a> | <a href='/contrib/'>Web FAQs</a> | <a href='/docs/'>Documents</a> | <a href='http://www.city-data.com/'>Cities</a> | <a href='http://www.city-data.com/restaurant-inspections.html'>Restaurant inspections</a> ]</DIV>
+<br/>
+<hr class="hr4" />
+</td>
+</table>
+</div>
+<!--MENU_FTR-->
+
+
+		<div style="clear:both;"></div>
+
+<!-- footer -->
+		</div>
+		<div id="footer">
+			Some parts &copy; 2020 Advameg, Inc.&nbsp;&nbsp;|&nbsp;&nbsp;
+
+			<script type="text/javascript"><!--
+			    esa("terms", "Terms of Use");
+			// --></script>
+		</div>
+	</div>
+</div>
+<!-- /footer -->
+
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-892232-19");
+    pageTracker._trackPageview();
+</script>
+
+</body>
+
+</html>
+

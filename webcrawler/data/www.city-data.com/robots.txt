@@ -1,0 +1,81 @@
+HTTP/1.1 200 OK
+Date: Fri, 22 May 2020 12:36:13 GMT
+Server: Apache
+Last-Modified: Thu, 09 May 2019 08:20:27 GMT
+ETag: "4ed-588701f5608c0"
+Accept-Ranges: bytes
+Content-Length: 1261
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+X-Frame-Options: sameorigin
+Connection: close
+Content-Type: text/plain
+
+User-agent: Mediapartners-Google
+Disallow:
+
+User-agent: Mediapartners-Google*
+Disallow:
+
+
+User-agent: *
+Disallow: /forum/search.php*
+Disallow: /forum/reputation.php*
+Disallow: /forum/newreply.php*
+Disallow: /cityname.php*
+Disallow: /cityname2.php*
+Disallow: /news/
+Disallow: /forum2/
+Disallow: /forumc/
+Disallow: /forumbeta/
+Disallow: /cityw/
+Disallow: /roost_ads/
+Disallow: /cd_ads/
+Disallow: /forum/fort-myers-cape-coral-area/515615-beware-dr-robert-di-fronzo.html
+Disallow: /bs/
+Disallow: /business-profiles/map.php*
+Disallow: /so/*.js
+Disallow: /soz/*.js
+Disallow: /knowledge/
+Disallow: /mapIt.html*
+Disallow: /restaurants/afd.class.php*
+Disallow: /city/js/getBoxes.php*
+Disallow: /county/js/getBoxes.php*
+Disallow: /zips/js/getBoxes.php*
+Disallow: /neighborhood/js/getBoxes.php*
+Disallow: /mtc.class.php*
+Disallow: /restaurants/menus/
+Disallow: /mod_comments/*
+
+User-agent: 008
+Disallow: /
+
+User-agent: sitebot
+Disallow: /
+
+User-agent: businessdbbot
+Disallow: /
+
+User-agent: magpie-crawle
+Disallow: /
+
+User-agent: Bender
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: JikeSpider
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: proximic
+Disallow: /
+
+User-agent: ADmantX
+Disallow: /
+
+User-agent: Mediapartners-Google
+Allow: /knowledge

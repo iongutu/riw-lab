@@ -1,0 +1,792 @@
+HTTP/1.1 200 OK
+Date: Fri, 22 May 2020 12:35:27 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Vary: Accept-Encoding
+Content-Length: 33332
+Connection: close
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>RFC 442 - Current flow-control scheme for IMPSYS (RFC442)</title>
+<meta name="description" content="RFC 442 - Current flow-control scheme for IMPSYS"/>
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" type="text/css" href="http://www.faqs.org/style/faqs.css" />
+<script type="text/javascript" src="http://www.faqs.org/style/rs.js"></script>
+<script type="text/javascript" src="http://www.faqs.org/utils.js"></script>
+<style type="text/css">
+#hsublogo,#navigation{display:none;}
+.left {float:left;margin-left:20%;height:40px;}
+.right {float:right;margin-right:20%;height:40px;}
+.hr4 { clear: both;}
+</style>
+
+	<style type="text/css">
+		* {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.row {
+		  margin-right: -15px;
+		  margin-left: -15px;
+		}
+		.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before, .btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before, .container-fluid:after, .container-fluid:before, .container:after, .container:before, .dl-horizontal dd:after, .dl-horizontal dd:before, .form-horizontal .form-group:after, .form-horizontal .form-group:before, .modal-footer:after, .modal-footer:before, .modal-header:after, .modal-header:before, .nav:after, .nav:before, .navbar-collapse:after, .navbar-collapse:before, .navbar-header:after, .navbar-header:before, .navbar:after, .navbar:before, .pager:after, .pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before {
+			display: table;
+			content: " ";
+		}
+		.btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after, .container-fluid:after, .container:after, .dl-horizontal dd:after, .form-horizontal .form-group:after, .modal-footer:after, .modal-header:after, .nav:after, .navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after, .panel-body:after, .row:after {
+			clear: both;
+		}
+
+		.form-control {
+			display: block;
+			width: 100%;
+			height: 34px;
+			padding: 6px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #555;
+			background-color: #fff;
+			background-image: none;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+			-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+			transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		}
+		label {
+			display: inline-block;
+			max-width: 100%;
+			margin-bottom: 5px;
+			font-weight: 700;
+		}
+		.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+			position: relative;
+			min-height: 1px;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+		textarea.form-control {
+			height: auto;
+		}
+		.form-group {
+		  margin-bottom: 15px;
+		}
+		@media (min-width: 768px){
+			.col-sm-3 {
+			  width: 25%;
+			}
+			.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+			  float: left;
+			}
+			.col-sm-12 {
+				width: 100%;
+			}
+		}
+		.btn {
+			display: inline-block;
+			padding: 6px 12px;
+			margin-bottom: 0;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 1.42857143;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
+			cursor: pointer;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			background-image: none;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+		.btn-default:hover {
+			color: #333;
+			background-color: #e6e6e6;
+			border-color: #adadad;
+		}
+		.btn.focus, .btn:focus, .btn:hover {
+			color: #333;
+			text-decoration: none;
+		}
+		.btn-default {
+			color: #333;
+			background-color: #fff;
+			border-color: #ccc;
+		}
+		.alert {
+			padding: 15px;
+			margin-bottom: 20px;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+		.alert-danger {
+			color: #a94442;
+			background-color: #f2dede;
+			border-color: #ebccd1;
+		}
+		.alert .close {
+			display:none;
+		}
+  	#Comments_section{clear:both;}
+
+
+
+
+    .Comments_messagebox {text-align:center;color:#C52525;background-color:#FFEAEA;border:1px dotted #DB8686;width:100%;padding:10px;margin-left:auto;margin-right:auto;margin-bottom:15px;}";
+    
+    .Comments_form input { margin-left:10px;margin-right:10px;margin-top:5px;display:block;width:150px;}";
+    .Comments_form textarea { margin-left:10px;display:block;width:95%;height:140px;}";
+    .Comments_form div.Comments_name {float:left;}";
+    .Comments_form div.Comments_mail {float:left;position:relative;}";
+    .Comments_form div.Comments_showmail {margin-left:8px;color:gray;font-size:8pt;}";
+    .Comments_form div.Comments_text {clear:left;}";
+    .Comments_form .Comments_showmail label {display:inline;margin:2px;width:auto;}";
+    .Comments_form .Comments_showmail input {display:inline;margin:0px;width:auto;border:none;background-color:transparent;}";
+
+    .Comments_form {width:96%; padding:10px 20px; margin: auto;}";
+  </style>
+
+	<style type="text/css">
+		.Comments_form {background-color:#F7F7F5; border-radius:8px; padding:10px; border:1px solid #E4F0E2; border-top:3px solid #E5E5D5; }
+		.Comments_form h4 {border-bottom:2px solid #E5E5D5; padding-bottom:10px; margin:2px 0 10px 0;}
+
+		.Comments_showmail {font-size:12px;line-height:normal;}
+		.Comments_text span {font-size:12px;line-height:normal;color:gray;margin-left:10px}
+		.Comments_showmail input {width:12px;height:13px;}
+		.Comments_btn {margin-top:10px;}
+
+    .Comments_commentsbox {width:100%; margin:auto; margin-bottom:20px; margin-top:20px; line-height:normal;}
+
+		.Comments_comment {position:relative; width:100%; border-top:4px solid #C4DAE5; border-radius:10px; border-right:1px solid #E8F1F7; border-left: 1px solid #E8F1F7; padding:2px; padding-top:8px;  margin-right:10px; background-repeat:repeat-x;background-position:top;margin-bottom:12px; background-color:#FBFBFB; background-image:url('/images/comments.back.1.png')}
+		.Comments_comment_alt {background-image:url('/images/comments.back.2.png');}
+
+    .Comments_info {height:32px; overflow:hidden; position:absolute; top:-8px; left:5px; right:5px; border-bottom:1px solid #D9E4EA; padding-top:10px;}
+
+    .Comments_balloon { z-index:2; text-align:center; font-weight:bold;text-decoration:none;color:#CC0000;font-size:7pt; width:23px; height:21px; position:absolute; top:0; left:0; padding-top:0px; line-height:19px; margin:0; background-image:url('/images/comments.balloon.gif'); background-repeat:no-repeat; background-position: 0 0; }
+		.Comments_link { text-decoration:none;color:#CC0000;font-size:7pt; border:none;}
+
+    .Comments_date {float:right;font-size:12px;color:gray;display:inline;opacity:0.5;padding-top:2px; }
+    .Comments_moderate {float:right;display:inline;position:relative;margin-left:5px;}
+		.Comments_user { font-size:13px;display:inline;position:relative;top:-0px;left:29px;}
+		.Comments_user a { font-weight:bold;text-decoration:none;color:#006699; }
+
+		.Comments_text { margin-left:30px;color:#666;margin-top:27px; padding-bottom:10px; }
+		.Comments_clear {clear:both;line-height:1px;height:1px;display:inline;}
+
+		#qaComments {text-align:left;}
+
+	</style>
+		<script type="text/javascript">
+		//<![CDATA[
+		function confirmModerate(url,num){
+		  url = url + '?Comments[do]=mod&Comments[id]=' + num + '#Comments_' + num;
+		  if (confirm('Do you want to report this comment as inappropriate?')) location.href=url;
+		  return 0;
+		}
+		function validate_form(frm) {
+		  var value = '';
+		  var errFlag = new Array();
+		  _qfMsg = '';
+
+		  $("#Comments_gname").addClass('has-error');
+
+		  value = frm.elements['Comments[name]'].value;
+		  if (value == '' && !errFlag['name']) {
+		    errFlag['name'] = true;
+		    _qfMsg = _qfMsg + '\n - Please enter your name';
+		  }
+			if (errFlag['name']) $("#Comments_gname").addClass('has-error');
+			else $("#Comments_gname").removeClass('has-error');
+
+		  value = frm.elements['Comments[mail]'].value;
+		  if (value == '' && !errFlag['mail']) {
+		    errFlag['mail'] = true;
+		    _qfMsg = _qfMsg + '\n - Please enter your e-mail';
+		  }
+		  var regex = /^((\"[^\"\f\n\r\t\v\b]+\")|([\w\!\#\$\%\&'\*\+\-\~\/\^\`\|\{\}]+(\.[\w\!\#\$\%\&'\*\+\-\~\/\^\`\|\{\}]+)*))@((\[(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))\])|(((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9]))\.((25[0-5])|(2[0-4][0-9])|([0-1]?[0-9]?[0-9])))|((([A-Za-z0-9\-])+\.)+[A-Za-z\-]+))$/;
+		  if (value != '' &&!regex.test(value) && !errFlag['mail']) {
+		    errFlag['mail'] = true;
+		    _qfMsg = _qfMsg + '\n - E-mail address format is invalid';
+		  }
+		  if (errFlag['mail']) $("#Comments_gmail").addClass('has-error');
+			else $("#Comments_gmail").removeClass('has-error');
+
+		  value = frm.elements['Comments[text]'].value;
+		  if (value == '' && !errFlag['text']) {
+		    errFlag['text'] = true;
+		    _qfMsg = _qfMsg + '\n - Please enter your comment';
+		  }
+		  if (value.length<50 && !errFlag['text']) {
+		    errFlag['text'] = true;
+		    _qfMsg = _qfMsg + '\n - Comment is too short (50 characters min.)';
+		  }
+		  if (value.length>4000 && !errFlag['text']) {
+		    errFlag['text'] = true;
+		    _qfMsg = _qfMsg + '\n - Comment is too long (4000 characters max)';
+		  }
+		  if (errFlag['text']) $("#Comments_gtext").addClass('has-error');
+			else $("#Comments_gtext").removeClass('has-error');
+
+		  if (_qfMsg != '') {
+		    _qfMsg = 'Invalid information entered:' + _qfMsg + '\nPlease correct these fields.';
+		    alert(_qfMsg);
+		    return false;
+		  }
+		  return true;
+		}
+
+		//]]>
+		</script>
+
+		<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('cdrecaptcha', {
+          'sitekey' : '6LfSIsEUAAAAAIeFL5JM0JT374koFwBblmBKFMKL'
+        });
+      };
+    </script>
+<script type="text/javascript">
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script>
+</head>
+
+<body>
+
+<!-- header -->
+<div id="hbar"></div>
+<div id="body">
+	<div id="page">
+	<div id="header">
+
+		<div id="hsearch">
+		</div>
+		<div id="hlogo"><a href="http://www.faqs.org"><img src="/images/faqs.org.png" alt="faqs.org" /></a></div>
+		<div id="hsublogo">
+			<h1>RFC 442 - Current flow-control scheme for IMPSYS</h1>
+		</div>
+	</div>
+
+		<div id="navigation">faqs.org</div>
+		
+	<div id="content">
+
+<!-- /header -->
+
+
+<div id="hwelcome">
+	<img src="http://www.faqs.org/images/library.jpg" alt="faqs.org - Internet FAQ Archives" style="width:150px;height:62px;" />
+	<h1>RFC 442 - Current flow-control scheme for IMPSYS</h1>	
+	<g:plusone></g:plusone>
+	<!--MENU_HDR-->
+</div>
+
+
+
+<ul id='hnavbar'>
+	<li><a href="/rfcs/">Internet RFC Index</a></li>
+	<li><a href="/faqs/">Usenet FAQ Index</a></li>
+	<li><a href="/contrib/">Other FAQs</a></li>
+	<li><a href="/docs/">Documents</a></li>
+
+	<li><a href="/tools/">Tools</a></li>
+	<li style="margin-top:8px;"><b>Search</b></li>
+	<li><a href="/faqs/faqsearch.html">Search FAQs</a></li>
+    <li><a href="/rfcs/rfcsearch.html">Search RFCs</a></li>
+
+	<li style="margin-top:8px;"><b>IFC Home</b></li>
+	<li><a href="http://www.city-data.com/">Cities</a></li>
+
+	<li><a href="http://www.country-data.com/">Countries</a></li>
+	<li><a href="http://www.hospital-data.com/">Hospitals</a></li>
+	<li><a href="http://www.webhostingratings.com/">Web Hosting Ratings</a></li>
+</ul>
+
+
+<div id='fmaincolumn'>
+
+
+
+<table><tr>
+
+<td valign="top" class="fmtable">
+<hr class="hr1" />
+
+<!-- SEARCH -->
+<table style='text-align:center;margin: 0px auto;'><tr><td>
+<form action="http://www.faqs.org/rfcs/rfcresults.html" id="cse-search-box">
+	<input type="hidden" name="cx" value="012585674615115756003:0rnper8ld_o" />
+	<input type="hidden" name="cof" value="FORID:11" />
+	<input type="hidden" name="ie" value="UTF-8" />
+	<input type="hidden" name="hq" value="more:rfc" />
+	<table>
+		<tr><td><h2>Search the RFC Archives</h2></td></tr>
+
+		<tr><td><input type="text" name="q" style="width:240px;" />&nbsp;<input type="submit" name="sa" value="Search" style="margin-left: 0px;"/></td></tr>
+	</table>
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en"></script> 
+</td>
+<td style='width:10%;'></td>
+<td>
+<form method="post" action="/rfcs/rfcdisplay.html">
+<h2>Or Display the document by number</h2>
+<table><tr>
+<td><input name=display size=9></td>
+<td><input type="submit" value="Display RFC By Number"></td>
+</tr>
+
+</table>
+</form>
+</td></tr>
+</table>
+<br/><hr class="hr4" />
+<!-- /SEARCH -->
+<!-- RFC MENU --><DIV ALIGN=CENTER>[ <a href='/rfcs/'>RFC Index</a> | <a href='/faqs/'>Usenet FAQs</a> | <a href='/contrib/'>Web FAQs</a> | <a href='/docs/'>Documents</a> | <a href='http://www.city-data.com/'>Cities</a> | <a href='/sec-filings/'>SEC Filings</a> | <a href='http://www.city-data.com/countyDir.html'>Counties</a> ]</DIV>
+<PRE>
+
+Network Working Group                                            V. Cerf
+Request for Comments: 442                                24 January 1973
+NIC: 13774
+
+               The Current Flow-Control Scheme for IMPSYS
+
+   BB&amp;N quarterly report #13 outlines part of the current flow control
+   scheme in the IMP operating system.  A meeting held March 16, 1972,
+   at BB&amp;N was devoted to the description of this new scheme for the
+   benefit of interested network participants.
+
+   This note represents my understanding of the flow control mechanism.
+   The essential goal is to eliminate unnecessary retransmissions when
+   the load is heavy, eliminate the retransmission time-out period when
+   the load is light, increase bandwidth, prevent re-assembly lock-up,
+   control traffic from HOSTS into the net more strictly than the
+   earlier link blocking method, and secure the rights of life, liberty,
+   and the pursuit of happiness for ourselves and our posterity,...oops.
+
+Source IMP-to-Destination IMP Protocol
+
+   There are two different protocols depending on message length (i.e.
+   single or multi-packet).  We illustrate first the single packet case.
+
+          Source Imp                        Destination Imp
+          ----------                        ---------------
+
+case 1)   message (1) + implicit req (1)---&gt;
+                                        &lt;--- RFNM (arrived ok)
+          [discard copy of msg]
+
+case 2)   message (1) + implicit req (1)---&gt; no room, don't respond
+                                        &lt;--- All (1)  (room available)
+          message (1)                   ---&gt;
+          [discard copy of msg]         &lt;--- RFNM (arrived ok)
+
+   In the first case, a single packet message is sent to the destination
+   IMP.  This message acts as an implicit request for single packet
+   buffer space.  If there is room, as in case 1, the destination IMP
+   responds with a RFNM.  The source IMP, which has retained a copy of
+   the message, deletes its copy and goes on.
+
+   The second case illustrates what happens when the source IMP sends a
+   message to a destination IMP at which there is no room for the one-
+   packet message.  The arrival of the single packet message constitutes
+   a request for single packet buffer space, and is recorded as such by
+   the destination IMP in a first-come-first-served buffer reservation
+
+   request queue.  When space is available, the destination IMP will
+   transmit an ALL (1) to the requesting source IMP which can then send
+   the single packet message again, this time knowing that space has
+   been reserved at the destination.
+
+   For multi-packet messages, the procedure is somewhat different.  When
+   a message enters an IMP from a HOST, and the "last bit" flag is not
+   set when the number of bits in a maximum length single packet have
+   arrived, the IMP halts the HOST-&gt;IMP transmission line while it
+   determines whether space has been reserved at the dest. IMP.  If
+   space (8 packets worth) has been reserved, the HOST-&gt;IMP line is re-
+   opened, and the message is sent out normally.  If space has not been
+   reserved, the HOST-&gt;IMP line is kept closed while the source IMP
+   makes a request for multi-packet buffer storage at the destination
+   IMP.  When 8 buffers are available, the destination IMP responds with
+   an ALL (8).  The source IMP then transmits the message, and waits for
+   a combination RFNM and ALL (8) from the destination IMP.  The
+   destination IMP will delay its RFNM, if necessary, until it has
+   another 8 buffers available for the next multipacket message.
+
+   This sequence is illustrated below:
+
+            Source IMP                   Destination IMP
+            ----------                   ---------------
+
+H-&gt; I line
+----------&gt; First packet of multipacket
+            arrives. Halt H-&gt;I line and
+            send REQ (8)  --------------&gt;
+            start 30 sec. Time-out
+
+            If time-out, resend
+            REQ (8) and restart --------&gt;
+            time-out.
+                                &lt;--------ALL (8) when available. Start
+                                         long term (2 min.) time-out.
+                                         On time-out, reset all
+                                         outstanding reservations.
+
+            Send the message:
+                        |   -----------&gt;
+            Start 30 sec. time-out
+            for INComplete transmission.
+            If time-out, send INC?-----&gt;
+
+                                  &lt;------On recept of message, send
+                                         RFNM + implicit ALL (8). On
+                                         receipt of INC? send RFNM +
+                                         ALL(8) if MSG(8) received,
+                                         or send INC! if MSG(8) not
+                                         received. Start 2 min. time-out
+                                         on ALL(8).
+
+            Queue ALL(8); start 125 ms.
+            time-out when it reaches
+            head of queue. If time-out
+            on ALL(8), send GVB(8)-----&gt;
+                                  &lt;----- Ack.
+            else send next message -----&gt;
+
+   A key point in this protocol is that a source IMP, after receipt of a
+   RFNM and implicit ALL(8) from the destination IMP, has 125 msec. in
+   which to initiate the transfer of at least the first packet of a
+   multi-packet message to the destination IMP.  The source IMP may have
+   several allocate responses queued up in which case these time-outs
+   occur one after the other (one has to time-out before the next 125
+   msec time-out starts).
+
+   Time-outs exist in the source IMP which cause it to send INC?
+   messages to the destination IMP if it has received no response from
+   some earlier message.
+
+Buffer Allocation
+
+   A total of 40 buffers are available for store/forward and re-assembly
+   purposes.  At most 32 can be allocated for re-assembly, and at most
+   24-25 can be allocated for store and forward use.  This prevents
+   either kind of traffic from completely shutting out the other kind.
+
+Message Ordering (Source IMP-to-Destination IMP).
+
+   As an aid to congestion control, an IMP can have at most 4 messages
+   outstanding (un-RFNMed) for each other IMP.  Link numbers in the
+   message leader are ignored by the IMPs.  Instead, IMPs mark messages
+   leaving for other destinations with an 8-bit message number.  In
+   addition, a 2-bit priority number is also used in case a HOST has
+   marked a message as a priority message.  The key notion here is that
+   the IMPs treat all HOSTs on a given IMP as if they were a single
+   HOST.  A single sequence of message and priority numbers is used in
+   each direction between each pair of sites.
+
+   The receiving IMP remembers the message number of the last message
+   delivered, as well as the priority number of the last priority
+   message delivered.  It uses this information to correctly sequence
+   messages out the IMP-HOST line (s).  Since there is only one sequence
+   of numbers for each pair of sites, messages for one HOST at a site
+   may get in the way of messages for another HOST at the same site.  In
+   fact, if some message, m, is the next in line to go to some HOST, and
+   that HOST delays receipt for 30 seconds, any messages for another
+   HOST may be delayed that long also.  However, only the first message
+   is lost, since the second one could not even start into its
+   destination HOST until the first one had been delivered.  There is a
+   tighter coupling between HOSTs sharing an IMP than before, but not
+   much tighter.
+
+   An example of the use of message and priority numbers is given below.
+
+Order sent by           Order received by       Order received by
+Source IMP              Dest. IMP               HOST
+----------              ---------               ----
+
+11,12P(1),13P(2),14 --&gt; 13P(2),12P(1),14,11 --&gt; 12P(1),13P(2),11,14
+
+11,12P(1),13P(2),14 --&gt; 13P(2),11,14,12P(1) --&gt; 11,12P(1),13P(2),14
+
+where 13P(2) is interpreted to mean message #13, priority number(2).
+
+   Note that there are only 2 classes of messages, priority and non-
+   priority, and that the priority numbers simply allow ordering at the
+   destination of multiple outstanding priority transmissions from the
+   same site.
+
+   If HOSTs use link numbers to de-multiplex messages to processes, then
+   it would be a mistake to arbitrarily assign short messages priority.
+   If a file transmission were carried out such that the last short
+   message had priority, the file might not enter the receiving HOST in
+   the same order it was sent!
+
+ACK Mechanism
+
+   IMPs treat their physical channels (phone lines) as if they were
+   pairs of simplex communications paths.  Each IMPSYS has a sender and
+   receiver module for each full duplex channel.  Each module has an
+   "ODD/EVEN" bit which is used to keep track of the state of the last
+   packet on the line.  The object is for the sender module to "block" a
+   channel until the corresponding receiver has received a packet
+   indicating that the send packet was received on the other end (i.e.
+   an acknowledgment).
+
+   In the present system, acknowledgments are separate IMP-IMP packets.
+   In the new system, they are a single bit in a packet flowing in the
+   opposite direction on the reverse path of a full duplex channel.
+
+   Every packet sent between IMPs has an ACK bit and an OE bit, as shown
+   below.
+
+                         P                              A
+                          O                              C
+                           E                              K
+               +-------+-----+------------------------+-----+----------+
+typical packet |       |     |                        |     |          |
+               |       |     |                        |     |          |
+               +-------+-----+------------------------+-----+----------+
+
+   We need some terminology: Let POE be the packet OE bit, and SOE, ROE
+   be the send module OE bit and Receive module OE bit respectively.
+   For two IMPs, A and B, we distinguish SOE/A and SOE/B as the two send
+   module OE bits at IMPs A and B respectively.
+
+   The rules of operation are as follow:
+
+   Sender
+   ------
+   if ACK != SOE then do nothing
+   --
+   else SOE &lt;- !SOE (i.e. flip SOE bit) and free channel.
+   ----
+
+   Receiver
+   --------
+   if POE = ROE then packet is a duplicate so throw it away.
+   --
+   else ROE &lt;- !ROE
+   ----
+
+   Whenever a packet is sent by the sent module, its two bits, POE and
+   ACK are set up by:
+
+                        POE &lt;- SOE
+                        ACK &lt;- ROE
+
+   The mechanism is designed to use real traffic to accomplish the
+   acknowledgment protocol by piggy-backing the ACK bits in the header
+   of real packets.  If there is no real packet waiting for transmission
+   in the opposite direction, a fake packet is assembled which carries
+   the ACK, but which is not acknowledged by the receiving side.
+
+   We give an example of the operation of this mechanism between two
+   IMPs.
+
+                     IMP A                           IMP B
+                     -----                           -----
+                   ROE | SOE                       ROE | SOE
+                       |           POE   ACK           |
+                       |         +-----------+         |
+IMP A blocks send    1 | 0    (1)|  0      1 |-&gt;     1 | 0 IMP B NOPS,
+channel.               |         +-----------+         |   flips ROE
+                       |                               |
+                       |           POE   ACK           |
+                       |         +-----------+         |
+IMP A frees send     0 | 1     &lt;-|  0      0 |(2)    0 | 0 IMP B blocks
+channel,               |         +-----------+         |   channel for
+Flips SOE              |                               |   new traffic
+                       |           POE   ACK           |
+IMP A blocks send      |         +-----------+  crashes|
+channel                |      (3)|  1      0 |-&gt;or gets|
+                       |         +-----------+  lost   |
+                       |                               |
+                       |           POE   ACK           |
+IMP A detects packet   |         +-----------+         |
+duplicate (POE=ROE)  0 | 1     &lt;-|  0      0 |(2)    0 | 0 IMP B
+so does not change     |         +-----------+         |  retransmits no
+SOE bit.               |                               |  ACK received
+                       |           POE   ACK           |
+IMP A retransmits      |         +-----------+         |   IMP B flips
+packet 3               |      (3)|  1      0 |-&gt;     1 | 1 SOE, unblocks
+                       |         +-----------+         |   channel, and
+                       |                               |   flips ROE.
+                       |           POE   ACK           |
+IMP A flips ROE,       |         +-----------+         |
+      flips SOE      1 | 0     &lt;-|  1      1 |(4)      |
+                       |         +-----------+         |
+                       |                               |
+
+   In fact each send/receive module has 8 OE bits, so up to 8 packets
+   can be outstanding in either direction.
+
+How things really work
+
+   Actually, a single send module is responsible for trying to transmit
+   packets out on the 8 pseudo-channels.  Each channel has a two-bit
+   state (in addition to an OE bit).  Each channel is either FREE or IN
+   USE and if IN USE, it may be sending OLD or NEW packet.
+
+ start state                                      F = free
+        |                                         I = in use
+        V                                         X = don_t care
+       +-----+                 +------+           N = new packet
+       |  FX | --------------&gt; | I, N |           O = old packet
+       +-----+                 +------+
+          ^                       |
+          |                       |
+          |                       |
+          |                       |
+   ACK    |                       |
+ received |                       |
+          |                       V
+          |                   +------+
+          +-------------------| I, O |---+
+                              +------+   |
+                                  ^      | re-transmissions
+                                  +------+
+
+   Between IMPs, packets are sent repeatedly, until they are
+   acknowledged.  However, the choice of what to send is ordered by
+   priority as follows:
+
+      1. Priority Packets (as marked by HOST)
+
+      2. Non-Priority Packet
+
+      3. Unacknowledged packets (on I,O state channels)
+
+      4. Others
+
+   It was pointed out that a heavy load of type (1) and (2) traffic
+   might prevent retransmissions from occurring at all, and W. Crowther
+   responded that the bug would be fixed by a 125 ms time-out which
+   forces retransmission of old packets in class (3).
+
+   Note that each packet must carry a "pseudo-channel" number to
+   identify the POE-to-channel association, and 8 ACK bits (which are
+   positionally associated with the pseudo-channels).  Thus a single
+   packet can ACK up to 8 packets at once.
+
+          [This RFC was put into machine readable form for entry]
+     [into the online RFC archives by Helene Morin, Via Genie, 12/99]
+
+</PRE>
+&nbsp;<br>
+<div id="Comments_section">
+<h2 style='margin-bottom:0px;'>User Contributions:</h2>
+<div class="Comments_commentsbox" style=""></div>
+
+		<!-- cmtcode.2.4 -->
+
+		<div class="Comments_form" id="Comments_form">
+
+		<h4>Comment about this RFC, ask questions, or add new information about this topic:</h4>
+
+		
+
+		<form action="#Comments_form" method="post" onsubmit="return validate_form(this);" style="margin:0px;padding:0px;">
+			<input type="hidden" name="Comments[do]" value="add" style="display:none" />
+			<input type="hidden" name="Comments[page]" value="/rfcs/rfc442.html" style="display:none" />
+
+			<div class="row">
+				<div class="col-sm-3 form-group" id="Comments_gname">
+					<label for="Comments_name" class="control-label">Name:</label>
+					<input type="text" name="Comments[name]" value="" id="Comments_name" class="form-control" />
+				</div>
+				<div class="col-sm-3 form-group" id="Comments_gmail">
+					<label for="Comments_mail" class="control-label">E-mail:</label>
+					<input type="text" name="Comments[mail]" value="" id="Comments_mail" class="form-control" />
+					<div class="Comments_showmail">
+						<input type="checkbox" name="Comments[showmail]" value="1" id="Comments_showmail" />
+						<label for="Comments_showmail">Show my email publicly</label>
+					</div>
+				</div>
+				<div class="col-sm-6 form-group">
+					<label for="cdrecaptcha">Human Verification:</label>
+					<div id="cdrecaptcha" style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 form-group" id="Comments_gtext">
+					<label for="Comments_text" class="control-label">Public Comment: <span>(50-4000 characters)</span></label>
+					<textarea name="Comments[text]" id="Comments_text" class="form-control" rows="5" ></textarea>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 form-group">
+					<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send comment</button>
+				</div>
+			</div>
+
+		</form>
+		</div>
+		<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script><br/>
+</div>
+
+<div align="center">
+<table border="0" cellpadding="3" width="100%" cellspacing="3">
+<tr><td width="45%">
+<p align="left">Previous: <a href="/rfcs/rfc441.html">RFC 441 - Inter-Entity Communication - an experiment</a>
+</p></td><td width="10%">&nbsp;</td><td width="45%">
+<p align="right">Next: <a href="/rfcs/rfc443.html">RFC 443 - Traffic statistics (December 1972)</a>
+</p></td></tr></table></div><p align="right">&nbsp;</p>
+<!--RFC_COMMENTS-->
+<!-- RFC MENU --><DIV ALIGN=CENTER>[ <a href='/rfcs/'>RFC Index</a> | <a href='/faqs/'>Usenet FAQs</a> | <a href='/contrib/'>Web FAQs</a> | <a href='/docs/'>Documents</a> | <a href='http://www.city-data.com/'>Cities</a> | <a href='http://www.city-data.com/restaurant-inspections.html'>Restaurant inspections</a> ]</DIV>
+<br/>
+<hr class="hr4" />
+</td>
+</table>
+</div>
+<!--MENU_FTR-->
+
+
+		<div style="clear:both;"></div>
+
+<!-- footer -->
+		</div>
+		<div id="footer">
+			Some parts &copy; 2020 Advameg, Inc.&nbsp;&nbsp;|&nbsp;&nbsp;
+
+			<script type="text/javascript"><!--
+			    esa("terms", "Terms of Use");
+			// --></script>
+		</div>
+	</div>
+</div>
+<!-- /footer -->
+
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-892232-19");
+    pageTracker._trackPageview();
+</script>
+
+</body>
+
+</html>
+

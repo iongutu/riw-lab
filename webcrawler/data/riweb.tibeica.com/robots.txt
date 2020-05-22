@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Server: nginx/1.10.2
+Date: Fri, 22 May 2020 12:39:06 GMT
+Content-Type: text/plain
+Content-Length: 63
+Last-Modified: Mon, 15 May 2017 09:40:24 GMT
+Connection: close
+ETag: "59197788-3f"
+Accept-Ranges: bytes
+
+User-agent: RIWEB_CRAWLER
+Disallow:
+
+User-agent: *
+Disallow: /
